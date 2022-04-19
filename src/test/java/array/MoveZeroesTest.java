@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
-class BinarySearchTest {
+class MoveZeroesTest {
 
     @InjectMocks
-    BinarySearch binarySearch;
+    MoveZeroes moveZeroes;
 
     @BeforeEach
     public void setup() {
@@ -18,8 +18,9 @@ class BinarySearchTest {
 
     @Test
     void shouldFindElement() {
-        var list = new int[]{1, 3, 5, 8, 12, 34, 35};
-        var result = binarySearch.process(list, 8);
-        Assertions.assertEquals(3, result);
+        var list = new int[]{0, 1, 0, 3, 12};
+        var result = moveZeroes.process(list);
+        var expected = new int[]{1, 3, 12, 0, 0};
+        Assertions.assertArrayEquals(expected, result);
     }
 }
