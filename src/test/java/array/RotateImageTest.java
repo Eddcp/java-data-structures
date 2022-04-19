@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
-class MoveZeroesTest {
+class RotateImageTest {
 
     @InjectMocks
-    MoveZeroes moveZeroes;
+    RotateImage rotateImage;
 
     @BeforeEach
     public void setup() {
@@ -17,10 +17,10 @@ class MoveZeroesTest {
     }
 
     @Test
-    void shouldMoveZeroes() {
-        var list = new int[]{0, 1, 0, 3, 12};
-        var result = moveZeroes.process(list);
-        var expected = new int[]{1, 3, 12, 0, 0};
-        Assertions.assertArrayEquals(expected, result);
+    void shouldRotateMatrix() {
+        int[][] matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] result = new int[][]{{7, 4, 1}, {8, 5, 2}, {9, 6, 3}};
+        rotateImage.process(matrix);
+        Assertions.assertArrayEquals(result, matrix);
     }
 }
